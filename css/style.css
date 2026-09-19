@@ -71,6 +71,10 @@ img {
     display: block;
 }
 
+p {
+    text-align: justify;
+}
+
 a {
     text-decoration: none;
     color: inherit;
