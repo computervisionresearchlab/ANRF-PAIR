@@ -1,0 +1,3161 @@
+/* =========================================================
+   ANRF–NIT ROURKELA PAIR WEBSITE
+   Main Stylesheet
+========================================================= */
+
+
+/* ================= ROOT VARIABLES ================= */
+
+:root {
+
+    --navy: #102f4a;
+    --navy-dark: #092238;
+    --navy-light: #194b70;
+
+    --teal: #0e7490;
+    --teal-dark: #0b6078;
+
+    --green: #3c8c63;
+    --green-light: #e8f4ed;
+
+    --gold: #c99535;
+    --gold-light: #f6edda;
+
+    --white: #ffffff;
+    --off-white: #f7f9fb;
+    --light-bg: #f1f5f8;
+
+    --text-dark: #1e293b;
+    --text: #475569;
+    --text-light: #64748b;
+
+    --border: #e2e8f0;
+
+    --shadow-sm: 0 4px 15px rgba(15, 35, 55, 0.05);
+    --shadow-md: 0 12px 35px rgba(15, 35, 55, 0.09);
+    --shadow-lg: 0 20px 55px rgba(15, 35, 55, 0.13);
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+
+    --transition: all 0.3s ease;
+
+}
+
+
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    background: var(--white);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+.container {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+
+/* ================= HEADER ================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--white);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
+}
+
+.top-bar {
+    background: var(--navy-dark);
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 11px;
+    letter-spacing: 0.3px;
+}
+
+.top-bar-inner {
+    min-height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.institution-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.institution-label i {
+    color: #9ec5dc;
+}
+
+.top-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.top-links a {
+    transition: var(--transition);
+}
+
+.top-links a:hover {
+    color: var(--white);
+}
+
+.main-header {
+    background: var(--white);
+}
+
+.header-inner {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    flex-shrink: 0;
+}
+
+.brand-logo {
+    object-fit: contain;
+}
+
+.anrf-logo {
+    width: 64px;
+    height: 52px;
+}
+
+.nitr-logo {
+    width: 57px;
+    height: 57px;
+}
+
+.brand-divider {
+    height: 38px;
+    width: 1px;
+    background: var(--border);
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.brand-small {
+    color: var(--text-light);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+.brand-title {
+    color: var(--navy);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-link {
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 10px 13px;
+    border-radius: 6px;
+    transition: var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--navy);
+    background: #edf4f8;
+}
+
+.nav-conclave {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 8px;
+    padding: 11px 17px;
+    border-radius: 6px;
+    color: var(--white);
+    background: var(--navy);
+    font-size: 11px;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.nav-conclave:hover {
+    background: var(--teal);
+    transform: translateY(-1px);
+}
+
+.nav-conclave i {
+    font-size: 10px;
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    color: var(--navy);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+/* ================= HERO ================= */
+
+.hero-section {
+    min-height: 690px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg,
+            rgba(6, 27, 46, 0.97) 0%,
+            rgba(8, 39, 63, 0.88) 40%,
+            rgba(8, 39, 63, 0.45) 75%,
+            rgba(8, 39, 63, 0.60) 100%),
+        url('../assets/images/pair-hero.jpg') center / cover no-repeat;
+    overflow: hidden;
+}
+
+.hero-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 85% 20%, rgba(63, 143, 91, 0.18), transparent 30%),
+        radial-gradient(circle at 75% 80%, rgba(14, 116, 144, 0.16), transparent 30%);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: linear-gradient(to right, black, transparent);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 100px 0 120px;
+    max-width: 850px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #b7d8e7;
+    border: 1px solid rgba(183, 216, 231, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 7px 13px;
+    border-radius: 30px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    margin-top: 10px; 
+}
+
+.badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #7bc99b;
+    box-shadow: 0 0 0 4px rgba(123, 201, 155, 0.12);
+}
+
+.hero-content h1 {
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(40px, 5.5vw, 68px);
+    line-height: 1.12;
+    font-weight: 700;
+    letter-spacing: -2px;
+}
+
+.hero-content h1 span {
+    color: #86c9a1;
+}
+
+.hero-full-form {
+    color: #c8d8e3;
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 670px;
+    margin-top: 20px;
+}
+
+.hero-full-form strong {
+    color: var(--white);
+    font-weight: 600;
+}
+
+.hero-divider {
+    width: 55px;
+    height: 3px;
+    background: var(--gold);
+    margin: 28px 0 22px;
+}
+
+.hero-consortium-label {
+    color: #9db8c9;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.hero-content h2 {
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(28px, 3.5vw, 42px);
+    line-height: 1.2;
+    margin-top: 5px;
+}
+
+.hero-consortium-name {
+    color: #b9d1de;
+    font-size: 13px;
+    max-width: 600px;
+    line-height: 1.8;
+    margin-top: 8px;
+}
+
+.hero-description {
+    color: #d1dfe7;
+    font-size: 14px;
+    max-width: 600px;
+    line-height: 1.9;
+    margin-top: 22px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 48px;
+    padding: 13px 21px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    transition: var(--transition);
+}
+
+.btn i {
+    font-size: 11px;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover i {
+    transform: translateX(3px);
+}
+
+.btn-primary {
+    color: var(--white);
+    background: var(--green);
+}
+
+.btn-primary:hover {
+    background: #4ca873;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(60, 140, 99, 0.25);
+}
+
+.btn-outline {
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--white);
+}
+
+.hero-scroll {
+    position: absolute;
+    z-index: 2;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.hero-scroll i {
+    font-size: 12px;
+    animation: scrollBounce 1.8s infinite;
+}
+
+@keyframes scrollBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(5px);
+    }
+}
+
+
+/* ================= STATS ================= */
+
+.stats-section {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.stat-item {
+    min-height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border-right: 1px solid var(--border);
+}
+
+.stat-item:last-child {
+    border-right: none;
+}
+
+.stat-icon {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    color: var(--teal);
+    background: #eaf5f7;
+    border-radius: 50%;
+    font-size: 16px;
+}
+
+.stat-item strong {
+    display: block;
+    color: var(--navy);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 23px;
+    line-height: 1.1;
+}
+
+.stat-item span {
+    display: block;
+    color: var(--text-light);
+    font-size: 10px;
+    margin-top: 3px;
+}
+
+
+/* ================= GENERAL SECTION ================= */
+
+.section {
+    padding: 105px 0;
+}
+
+.section-heading {
+    max-width: 650px;
+    margin-bottom: 55px;
+}
+
+.section-heading.centered {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--teal);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    margin-bottom: 17px;
+}
+
+.section-label > span {
+    width: 25px;
+    height: 2px;
+    background: var(--teal);
+}
+
+.section-heading h2 {
+    color: var(--navy);
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(27px, 3vw, 39px);
+    line-height: 1.25;
+    letter-spacing: -0.8px;
+}
+
+.section-heading h2 span {
+    color: var(--teal);
+}
+
+.section-heading p {
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.8;
+    margin-top: 16px;
+}
+
+
+/* ================= OVERVIEW ================= */
+
+.overview-section {
+    background: var(--off-white);
+}
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.overview-content p {
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.95;
+    margin-bottom: 18px;
+}
+
+.overview-content strong {
+    color: var(--navy);
+    font-weight: 700;
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--teal);
+    font-size: 12px;
+    font-weight: 800;
+    margin-top: 10px;
+    transition: var(--transition);
+}
+
+.text-link:hover {
+    gap: 17px;
+    color: var(--navy);
+}
+
+.text-link i {
+    font-size: 11px;
+}
+
+.overview-card {
+    position: relative;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+}
+
+.overview-card::before {
+    content: "";
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: #e8f4f3;
+    top: -100px;
+    right: -80px;
+}
+
+.overview-card-top {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-eyebrow {
+    color: var(--text-light);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.overview-card-top i {
+    color: var(--teal);
+    font-size: 20px;
+}
+
+/* =========================================
+   HUB & SPOKE RESEARCH NETWORK
+   7 PARTNERS • SINGLE ORBIT • ROTATING
+========================================= */
+
+.overview-network {
+    height: 360px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: visible;
+}
+
+
+/* =========================================
+   CENTRAL HUB — NIT ROURKELA
+========================================= */
+
+.network-center {
+    position: absolute;
+    z-index: 50;
+
+    width: 138px;
+    height: 138px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    border-radius: 50%;
+
+    background: var(--white);
+
+    border: 3px solid var(--navy);
+
+    box-shadow:
+        0 0 0 10px rgba(16, 47, 74, 0.06),
+        0 0 0 20px rgba(16, 47, 74, 0.035),
+        0 12px 30px rgba(15, 35, 55, 0.12);
+}
+
+
+/* NIT LOGO */
+
+.hub-logo-main {
+    width: 64px;
+    height: 64px;
+
+    display: grid;
+    place-items: center;
+
+    margin-bottom: 5px;
+}
+
+.hub-logo-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* NIT TEXT */
+
+.network-center strong {
+    color: var(--navy);
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    line-height: 1.2;
+}
+
+.network-center span {
+    color: var(--text-light);
+
+    font-size: 8px;
+
+    margin-top: 3px;
+}
+
+
+/* =========================================
+   SINGLE ORBIT
+========================================= */
+
+.partner-orbit {
+    position: absolute;
+
+    width: 270px;
+    height: 270px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border: 1px dashed #c4dfe3;
+
+    border-radius: 50%;
+
+    z-index: 5;
+
+    /*
+       IMPORTANT:
+       The entire orbit rotates around
+       the fixed NIT Rourkela hub.
+    */
+    animation:
+        researchOrbit 22s linear infinite;
+}
+
+
+/* Remove any additional circles */
+
+.partner-orbit::before,
+.partner-orbit::after {
+    content: none !important;
+    display: none !important;
+}
+
+
+/* =========================================
+   PARTNER NODE
+========================================= */
+
+.partner-node {
+    position: absolute;
+
+    width: 58px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    /*
+       Keeps the logo centered on its
+       orbital position.
+    */
+    transform: translate(-50%, -50%);
+
+    z-index: 20;
+
+    /*
+       Counter rotation:
+       the university logo + name remain
+       upright while the orbit moves.
+    */
+    animation:
+        counterRotate 22s linear infinite;
+}
+
+
+/* =========================================
+   PARTNER LOGO
+========================================= */
+
+.partner-logo {
+    width: 56px;
+    height: 56px;
+
+    display: grid;
+    place-items: center;
+
+    padding: 6px;
+
+    background: var(--white);
+
+    border: 2px solid #b7d2d8;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 5px 15px rgba(15, 35, 55, 0.10);
+}
+
+
+.partner-logo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* =========================================
+   UNIVERSITY NAME
+========================================= */
+
+.partner-node > span {
+    position: absolute;
+
+    width: 105px;
+
+    color: var(--text-light);
+
+    font-size: 7.5px;
+    font-weight: 700;
+
+    line-height: 1.25;
+
+    text-align: center;
+
+    white-space: normal;
+
+    z-index: 30;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   7 POSITIONS AROUND ONE CIRCLE
+========================================= */
+
+/*
+        1
+        ●
+
+   7          2
+   ●          ●
+
+
+   6          3
+   ●          ●
+
+        5   4
+        ●   ●
+*/
+
+
+/* 1 — TOP */
+
+/* =========================================
+   EQUAL 7-WAY PARTNER SPACING
+========================================= */
+
+.node-1 {
+    top: 0%;
+    left: 50%;
+}
+
+.node-2 {
+    top: 18.83%;
+    left: 89.09%;
+}
+
+.node-3 {
+    top: 61.13%;
+    left: 98.75%;
+}
+
+.node-4 {
+    top: 95.05%;
+    left: 71.69%;
+}
+
+.node-5 {
+    top: 95.05%;
+    left: 28.31%;
+}
+
+.node-6 {
+    top: 61.13%;
+    left: 1.25%;
+}
+
+.node-7 {
+    top: 18.83%;
+    left: 10.91%;
+}
+
+
+/* =========================================
+   PARTNER LABEL POSITIONS
+========================================= */
+
+/* TOP */
+.node-1 > span {
+    width: 110px;
+    top: 61px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* UPPER RIGHT */
+.node-2 > span {
+    width: 90px;
+    top: 59px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* LOWER RIGHT */
+.node-3 > span {
+    width: 90px;
+    top: 59px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* BOTTOM RIGHT */
+.node-4 > span {
+    width: 80px;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* BOTTOM LEFT */
+.node-5 > span {
+    width: 80px;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* LOWER LEFT */
+.node-6 > span {
+    width: 90px;
+    top: 59px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* UPPER LEFT */
+.node-7 > span {
+    width: 90px;
+    top: 59px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* =========================================
+   ORBIT ANIMATION
+========================================= */
+
+@keyframes researchOrbit {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+}
+
+
+/* =========================================
+   KEEP LOGOS + TEXT UPRIGHT
+========================================= */
+
+@keyframes counterRotate {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(-360deg);
+    }
+
+}
+
+
+/* =========================================
+   HOVER — PAUSE THE NETWORK
+========================================= */
+
+.overview-network:hover .partner-orbit,
+.overview-network:hover .partner-node {
+    animation-play-state: paused;
+}
+
+/* STATS ROW */
+.overview-card-bottom {
+    position: relative;
+    z-index: 40;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+}
+
+.overview-card-bottom span {
+    color: var(--text-light);
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.overview-card-bottom i {
+    color: var(--green);
+    margin-right: 5px;
+}
+
+
+/* ================= CONSORTIUM THEMES ================= */
+
+.consortium-section {
+    background: var(--white);
+}
+
+.theme-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.theme-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--white);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.theme-card:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--shadow-lg);
+}
+
+.theme-card-image {
+    height: 150px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.theme-card-image::before,
+.theme-card-image::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.theme-card-image::before {
+    width: 210px;
+    height: 210px;
+}
+
+.theme-card-image::after {
+    width: 140px;
+    height: 140px;
+}
+
+.theme-card.agriculture .theme-card-image {
+    background: linear-gradient(135deg, #397957, #7eaf70);
+}
+
+.theme-card.health .theme-card-image {
+    background: linear-gradient(135deg, #28728a, #5aabb1);
+}
+
+.theme-card.energy .theme-card-image {
+    background: linear-gradient(135deg, #a27728, #d4b052);
+}
+
+.theme-card.environment .theme-card-image {
+    background: linear-gradient(135deg, #245b67, #529b92);
+}
+
+.theme-icon {
+    position: relative;
+    z-index: 1;
+    width: 62px;
+    height: 62px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    color: var(--white);
+    font-size: 25px;
+}
+
+.theme-number {
+    position: absolute;
+    right: 16px;
+    bottom: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.theme-card-content {
+    padding: 25px 22px 24px;
+}
+
+.theme-tag {
+    color: var(--text-light);
+    font-size: 9px;
+    letter-spacing: 1.3px;
+    font-weight: 800;
+}
+
+.theme-card h3 {
+    color: var(--navy);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    line-height: 1.35;
+    margin-top: 11px;
+}
+
+.theme-card p {
+    color: var(--text);
+    font-size: 12px;
+    line-height: 1.8;
+    margin-top: 13px;
+}
+
+.theme-focus {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 18px;
+    padding-top: 17px;
+    border-top: 1px solid var(--border);
+}
+
+.theme-focus span {
+    position: relative;
+    color: var(--text-light);
+    font-size: 10px;
+    padding-left: 14px;
+}
+
+.theme-focus span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--teal);
+}
+
+
+/* ================= PARTNERS ================= */
+
+.partners-section {
+    background: var(--off-white);
+}
+
+.hub-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.hub-card {
+    width: min(650px, 100%);
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 25px 30px;
+    background: var(--white);
+    border: 1px solid #b7d2d8;
+    border-top: 4px solid var(--teal);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+.hub-logo {
+    flex-shrink: 0;
+    width: 90px;
+    height: 90px;
+    display: grid;
+    place-items: center;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--white);
+}
+
+.hub-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.hub-info {
+    flex: 1;
+}
+
+.partner-role,
+.leadership-role {
+    display: block;
+    color: var(--teal);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.hub-info h3 {
+    color: var(--navy);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 21px;
+    line-height: 1.35;
+    margin-top: 8px;
+}
+
+.hub-info p {
+    color: var(--text-light);
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.hub-badge {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    color: var(--teal);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.hub-badge i {
+    font-size: 22px;
+}
+
+.hub-line {
+    position: absolute;
+    top: 100%;
+    width: 1px;
+    height: 25px;
+    background: #b7d2d8;
+}
+
+.spokes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.partner-card {
+    position: relative;
+    min-height: 255px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 20px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+}
+
+.partner-card:hover {
+    transform: translateY(-5px);
+    border-color: #b7d2d8;
+    box-shadow: var(--shadow-md);
+}
+
+.partner-number {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    color: #b4c2cb;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.partner-logo-placeholder {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    color: var(--teal);
+    background: #eaf5f7;
+    border-radius: 12px;
+    font-size: 21px;
+    margin-bottom: 20px;
+}
+
+.partner-card .partner-role {
+    font-size: 8px;
+}
+
+.partner-card h3 {
+    color: var(--navy);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 1.45;
+    margin-top: 9px;
+}
+
+.partner-card p {
+    color: var(--text-light);
+    font-size: 11px;
+    margin-top: auto;
+    padding-top: 15px;
+}
+
+
+/* ================= LEADERSHIP ================= */
+
+.leadership-section {
+    background: var(--white);
+}
+
+.director-card,
+.deputy-card {
+    width: min(720px, 100%);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    background: var(--off-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 25px 30px;
+    box-shadow: var(--shadow-sm);
+}
+
+.director-card {
+    border-top: 4px solid var(--navy);
+}
+
+.director-photo,
+.deputy-photo {
+    flex-shrink: 0;
+    width: 125px;
+    height: 145px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #dbe5eb;
+}
+
+.director-photo img,
+.deputy-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.director-info,
+.deputy-info {
+    flex: 1;
+}
+
+.director-info h3,
+.deputy-info h3 {
+    color: var(--navy);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    line-height: 1.3;
+    margin-top: 9px;
+}
+
+.director-info p,
+.deputy-info p {
+    color: var(--text-light);
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+.profile-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--teal);
+    font-size: 11px;
+    font-weight: 700;
+    margin-top: 14px;
+    transition: var(--transition);
+}
+
+.profile-link:hover {
+    color: var(--navy);
+}
+
+.profile-link i {
+    font-size: 9px;
+}
+
+.director-symbol {
+    width: 55px;
+    height: 55px;
+    display: grid;
+    place-items: center;
+    color: var(--navy);
+    background: #e6eef4;
+    border-radius: 50%;
+    font-size: 21px;
+}
+
+.deputy-card {
+    width: min(650px, 100%);
+    background: var(--white);
+}
+
+.deputy-photo {
+    width: 100px;
+    height: 115px;
+}
+
+.deputy-info h3 {
+    font-size: 20px;
+}
+
+.hierarchy-connector {
+    height: 50px;
+    width: 1px;
+    background: #cbd8df;
+    margin: 0 auto;
+    position: relative;
+}
+
+.hierarchy-connector span {
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    width: 7px;
+    height: 7px;
+    border-right: 1px solid #9db6c4;
+    border-bottom: 1px solid #9db6c4;
+    transform: translateX(-50%) rotate(45deg);
+    background: var(--white);
+}
+
+.theme-leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    align-items: start;
+}
+
+.leadership-theme-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--white);
+    transition: var(--transition);
+}
+
+.leadership-theme-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+}
+
+.leadership-theme-header {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 18px;
+    color: var(--white);
+}
+
+.agriculture-header {
+    background: #397957;
+}
+
+.health-header {
+    background: #28728a;
+}
+
+.energy-header {
+    background: #a27728;
+}
+
+.environment-header {
+    background: #245b67;
+}
+
+.leadership-theme-header > i {
+    font-size: 22px;
+    opacity: 0.9;
+}
+
+.leadership-theme-header span {
+    display: block;
+    font-size: 8px;
+    letter-spacing: 1px;
+    opacity: 0.75;
+    font-weight: 700;
+}
+
+.leadership-theme-header h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 1.35;
+    margin-top: 5px;
+}
+
+.leadership-person {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px;
+    border-bottom: 1px solid var(--border);
+}
+
+.leadership-person:last-child {
+    border-bottom: none;
+}
+
+.leadership-person img {
+    image-rendering: autohero-badge;
+    flex-shrink: 0;
+    width: 55px;
+    height: 65px;
+    border-radius: 7px;
+    object-fit: cover;
+    object-position: center top;
+    background: #e3ebef;
+}
+
+.person-role {
+    display: block;
+    color: var(--teal);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.7px;
+    line-height: 1.4;
+}
+
+.leadership-person h4 {
+    color: var(--navy);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    line-height: 1.4;
+    margin-top: 5px;
+}
+
+.leadership-person a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--text-light);
+    font-size: 9px;
+    margin-top: 5px;
+    transition: var(--transition);
+}
+
+.leadership-person a:hover {
+    color: var(--teal);
+}
+
+.leadership-person a i {
+    font-size: 8px;
+}
+
+
+/* ================= CONCLAVE ================= */
+
+.conclave-section {
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(100deg, rgba(7, 35, 55, 0.97), rgba(14, 82, 91, 0.92)),
+        url('../assets/images/pair-hero.jpg') center / cover no-repeat;
+}
+
+.conclave-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 90% 50%, rgba(83, 166, 125, 0.22), transparent 30%),
+        linear-gradient(90deg, transparent 49.5%, rgba(255, 255, 255, 0.025) 50%, transparent 50.5%);
+    background-size: auto, 80px 80px;
+}
+
+.conclave-pattern {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    right: -180px;
+    top: -180px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+}
+
+.conclave-pattern::before,
+.conclave-pattern::after {
+    content: "";
+    position: absolute;
+    inset: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 50%;
+}
+
+.conclave-pattern::after {
+    inset: 100px;
+}
+
+.conclave-content {
+    position: relative;
+    z-index: 1;
+    min-height: 330px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 65px 0;
+}
+
+.light-label {
+    color: #a9d4d7;
+}
+
+.light-label > span {
+    background: #a9d4d7;
+}
+
+.conclave-text h2 {
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(24px, 3vw, 38px);
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+    margin-top: 5px;
+}
+
+.conclave-text h3 {
+    color: #9ed3b0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 21px;
+    margin-top: 15px;
+}
+
+.conclave-text p {
+    color: #c2d6df;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+.btn-light {
+    flex-shrink: 0;
+    color: var(--navy);
+    background: var(--white);
+}
+
+.btn-light:hover {
+    background: #e1f2e7;
+    transform: translateY(-3px);
+}
+
+
+/* ================= FOOTER ================= */
+
+.site-footer {
+    background: var(--navy-dark);
+    color: #a9becb;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr 0.9fr 1.25fr;
+    gap: 55px;
+    padding: 65px 0 55px;
+}
+
+.footer-logos {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.footer-logos img {
+    width: 58px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.footer-logos img:last-child {
+    width: 50px;
+    height: 50px;
+}
+
+.footer-logo-divider {
+    width: 1px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.footer-brand h3 {
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+}
+
+.footer-brand p {
+    color: #9ed3b0;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 7px;
+}
+
+.footer-brand > span {
+    display: block;
+    color: #7f9aaa;
+    font-size: 11px;
+    line-height: 1.8;
+    max-width: 270px;
+    margin-top: 10px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-column h4 {
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.footer-column a {
+    color: #8ea8b7;
+    font-size: 11px;
+    margin-bottom: 10px;
+    transition: var(--transition);
+}
+
+.footer-column a:hover {
+    color: var(--white);
+    transform: translateX(3px);
+}
+
+.footer-contact p {
+    color: #8ea8b7;
+    font-size: 11px;
+    line-height: 1.9;
+}
+
+.footer-contact p i {
+    color: #8fcaa4;
+    margin-right: 6px;
+}
+
+.footer-contact > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #a9d4d7;
+    margin-top: 15px;
+}
+
+.footer-contact > a i {
+    font-size: 9px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-bottom-inner {
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-bottom p {
+    color: #6f8b9b;
+    font-size: 10px;
+}
+
+
+/* ================= BACK TO TOP ================= */
+
+.back-to-top {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 900;
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    color: var(--white);
+    background: var(--teal);
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--navy);
+}
+
+
+/* ================= SCROLL REVEAL ================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+
+/* Large Tablets / Small Desktops */
+
+@media (max-width: 1100px) {
+
+    .container {
+        width: min(100% - 40px, 1000px);
+    }
+
+    .main-nav {
+        gap: 0;
+    }
+
+    .nav-link {
+        padding: 10px 9px;
+        font-size: 11px;
+    }
+
+    .theme-grid,
+    .theme-leadership-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .spokes-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .overview-grid {
+        gap: 40px;
+    }
+
+    .footer-main {
+        gap: 30px;
+    }
+
+}
+
+
+/* Tablets */
+
+@media (max-width: 850px) {
+
+    .top-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: relative;
+        z-index: 1001;
+    }
+
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px 20px 20px;
+        background: var(--white);
+        border-top: 1px solid var(--border);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.08);
+        transform: translateY(-20px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: var(--transition);
+    }
+
+    .main-nav.open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .nav-link {
+        width: 100%;
+        padding: 13px 12px;
+        border-radius: 5px;
+    }
+
+    .nav-conclave {
+        justify-content: center;
+        margin: 10px 0 0;
+    }
+
+    .hero-section {
+        min-height: 650px;
+    }
+
+    .overview-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .overview-visual {
+        max-width: 550px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .theme-grid,
+    .theme-leadership-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .spokes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-main {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 45px 30px;
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: calc(100% - 30px);
+    }
+
+    .top-bar-inner {
+        min-height: 30px;
+    }
+
+    .institution-label {
+        font-size: 9px;
+    }
+
+    .header-inner {
+        min-height: 70px;
+    }
+
+    .brand {
+        gap: 9px;
+    }
+
+    .anrf-logo {
+        width: 48px;
+        height: 40px;
+    }
+
+    .nitr-logo {
+        width: 43px;
+        height: 43px;
+    }
+
+    .brand-divider {
+        height: 30px;
+    }
+
+    .brand-small {
+        font-size: 8px;
+        letter-spacing: 0.8px;
+    }
+
+    .brand-title {
+        font-size: 21px;
+    }
+
+    .hero-section {
+        min-height: auto;
+    }
+
+    .hero-content {
+        padding: 75px 0 100px;
+    }
+
+    .hero-content h1 {
+        font-size: 39px;
+        letter-spacing: -1.5px;
+    }
+
+    .hero-full-form {
+        font-size: 12px;
+    }
+
+    .hero-content h2 {
+        font-size: 29px;
+    }
+
+    .hero-consortium-name,
+    .hero-description {
+        font-size: 12px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 10px;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-item {
+        min-height: 90px;
+        justify-content: flex-start;
+        padding: 15px;
+        gap: 10px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .stat-item:nth-child(2) {
+        border-right: none;
+    }
+
+    .stat-item:nth-child(3),
+    .stat-item:nth-child(4) {
+        border-bottom: none;
+    }
+
+    .stat-item strong {
+        font-size: 20px;
+    }
+
+    .stat-item span {
+        font-size: 9px;
+    }
+
+    .stat-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 13px;
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+        font-size: 27px;
+    }
+
+    .section-heading p {
+        font-size: 12px;
+    }
+
+    .overview-content p {
+        font-size: 13px;
+    }
+
+    .overview-card {
+        padding: 18px;
+    }
+
+    /* =========================================
+       MOBILE RESEARCH NETWORK
+    ========================================= */
+
+    .overview-network {
+        height: 285px;
+        overflow: visible;
+    }
+
+    .network-center {
+        width: 112px;
+        height: 112px;
+    }
+
+    .hub-logo-main {
+        width: 52px;
+        height: 52px;
+        margin-bottom: 4px;
+    }
+
+    .network-center strong {
+        font-size: 10px;
+    }
+
+    .network-center span {
+        font-size: 7px;
+    }
+
+    .partner-orbit {
+        width: 270px;
+        height: 270px;
+        animation-duration: 18s;
+    }
+
+    .partner-node {
+        width: 48px;
+        animation-duration: 18s;
+    }
+
+    .partner-logo {
+        width: 45px;
+        height: 45px;
+        padding: 5px;
+    }
+
+    .partner-node > span {
+        width: 90px;
+        font-size: 6px;
+    }
+
+    .node-1 > span {
+        bottom: 50px;
+    }
+
+    .node-2 > span,
+    .node-3 > span,
+    .node-6 > span,
+    .node-7 > span {
+        top: 48px;
+    }
+
+    .node-4 > span,
+    .node-5 > span {
+        top: 48px;
+    }
+
+    .overview-card-bottom {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .theme-grid,
+    .theme-leadership-grid,
+    .spokes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .theme-card-image {
+        height: 135px;
+    }
+
+    .theme-card h3 {
+        font-size: 18px;
+    }
+
+    .hub-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 20px;
+        gap: 15px;
+    }
+
+    .hub-info h3 {
+        font-size: 18px;
+    }
+
+    .hub-badge {
+        flex-direction: row;
+    }
+
+    .partner-card {
+        min-height: auto;
+    }
+
+    .director-card,
+    .deputy-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 20px;
+    }
+
+    .director-photo {
+        width: 130px;
+        height: 150px;
+    }
+
+    .deputy-photo {
+        width: 115px;
+        height: 130px;
+    }
+
+    .director-info h3 {
+        font-size: 21px;
+    }
+
+    .deputy-info h3 {
+        font-size: 19px;
+    }
+
+    .director-symbol {
+        display: none;
+    }
+
+    .leadership-theme-header {
+        min-height: 85px;
+    }
+
+    .conclave-content {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 55px 0;
+        gap: 30px;
+    }
+
+    .conclave-text h2 {
+        font-size: 26px;
+    }
+
+    .conclave-text h3 {
+        font-size: 19px;
+    }
+
+    .btn-light {
+        width: auto;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 50px 0 40px;
+    }
+
+    .footer-bottom-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 18px 0;
+        gap: 5px;
+    }
+
+    .footer-bottom p {
+        font-size: 9px;
+    }
+
+    .back-to-top {
+        right: 15px;
+        bottom: 15px;
+        width: 38px;
+        height: 38px;
+    }
+
+}
+
+
+/* Very Small Devices */
+
+@media (max-width: 380px) {
+
+    .brand-small {
+        font-size: 7px;
+    }
+
+    .brand-title {
+        font-size: 19px;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+    }
+
+    .hero-content h2 {
+        font-size: 26px;
+    }
+
+    .stat-item {
+        padding: 12px 8px;
+    }
+
+    .stat-item span {
+        font-size: 8px;
+    }
+
+}
+
+/* =========================================
+   HUB AND SPOKES NETWORK SECTION
+========================================= */
+
+.network-section {
+    width: 100%;
+    padding: 90px 5% 110px;
+    background: #f7f9fb;
+    overflow: hidden;
+}
+
+
+/* SECTION HEADING */
+
+.section-heading {
+    max-width: 900px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.section-eyebrow {
+    position: relative;
+    display: inline-block;
+    padding-left: 28px;
+    margin-bottom: 18px;
+
+    color: #087b9b;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+}
+
+.section-eyebrow::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 20px;
+    height: 2px;
+    background: #087b9b;
+    transform: translateY(-50%);
+}
+
+.section-heading h2 {
+    margin: 0;
+    color: #102f50;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+}
+
+.section-heading h2 span {
+    color: #217e9e;
+}
+
+.section-heading p {
+    max-width: 650px;
+    margin: 20px auto 0;
+    color: #526b80;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   HUB CARD
+========================================= */
+
+.hub-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.hub-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    width: min(100%, 560px);
+    min-height: 140px;
+    padding: 26px 28px;
+
+    background: #ffffff;
+    border: 1px solid #bdd9e2;
+    border-top: 3px solid #147f9e;
+    border-radius: 14px;
+
+    box-shadow: 0 15px 35px rgba(18, 54, 78, 0.08);
+}
+
+
+/* LOGO CONTAINER */
+
+.institution-logo {
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px;
+    background: #ffffff;
+    border: 1px solid #e0e9ef;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.institution-logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.hub-logo {
+    flex-basis: 74px;
+    width: 74px;
+    height: 74px;
+    padding: 9px;
+}
+
+
+/* INSTITUTION TEXT */
+
+.institution-content {
+    min-width: 0;
+    flex: 1;
+}
+
+.institution-label {
+    display: block;
+    margin-bottom: 10px;
+
+    color: #087b9b;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+.institution-content h3 {
+    margin: 0;
+    color: #102f50;
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.institution-content p {
+    margin: 8px 0 0;
+    color: #718497;
+    font-size: 12px;
+}
+
+
+/* HUB ICON */
+
+.hub-symbol {
+    flex: 0 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    color: #087b9b;
+}
+
+.building-icon {
+    font-size: 25px;
+    line-height: 1;
+}
+
+.hub-symbol small {
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================
+   CONNECTOR
+========================================= */
+
+.network-connector {
+    width: 1px;
+    height: 42px;
+    margin: 0 auto;
+
+    background: #a9cbd5;
+}
+
+
+/* =========================================
+   SPOKES GRID
+========================================= */
+
+.spokes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    justify-content: center;
+    gap: 16px;
+
+    width: min(100%, 1020px);
+    margin: 0 auto;
+}
+
+
+/*
+   Each card has a fixed minimum height.
+   This helps maintain a consistent grid even
+   when institution names have different lengths.
+*/
+
+.spoke-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    min-height: 250px;
+    padding: 22px 18px 20px;
+
+    background: #ffffff;
+    border: 1px solid #dce6ed;
+    border-radius: 13px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.spoke-card:hover {
+    transform: translateY(-5px);
+    border-color: #9ccbd8;
+    box-shadow: 0 14px 30px rgba(18, 54, 78, 0.09);
+}
+
+
+/* NUMBER */
+
+.spoke-number {
+    position: absolute;
+    top: 17px;
+    right: 16px;
+
+    color: #a5b7c4;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+/* SPOKE LOGO */
+
+.spoke-card .institution-logo {
+    margin-bottom: 20px;
+}
+
+
+/* SPOKE CONTENT */
+
+.spoke-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.spoke-content .institution-label {
+    margin-bottom: 11px;
+    font-size: 8px;
+}
+
+.spoke-content h3 {
+    margin: 0;
+    max-width: 220px;
+
+    color: #102f50;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.35;
+}
+
+.institution-location {
+    margin-top: auto;
+    padding-top: 22px;
+
+    color: #718497;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   CENTER ALIGNMENT FOR LAST ROW
+========================================= */
+
+/*
+   With 7 cards and 4 columns, the final row
+   contains 3 cards. This rule centers those cards.
+*/
+
+.spoke-card:nth-child(5) {
+    grid-column: 1;
+}
+
+.spoke-card:nth-child(6) {
+    grid-column: 2;
+}
+
+.spoke-card:nth-child(7) {
+    grid-column: 3;
+}
+
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .spokes-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        width: min(100%, 760px);
+    }
+
+    /*
+       Reset desktop positioning.
+       The grid will center the final row naturally.
+    */
+
+    .spoke-card:nth-child(5),
+    .spoke-card:nth-child(6),
+    .spoke-card:nth-child(7) {
+        grid-column: auto;
+    }
+
+    .spoke-card {
+        min-height: 260px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE / SMALL TABLET
+========================================= */
+
+@media (max-width: 700px) {
+
+    .network-section {
+        padding: 65px 20px 80px;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+        font-size: 34px;
+    }
+
+    .hub-card {
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .hub-card .institution-content h3 {
+        font-size: 18px;
+    }
+
+    .hub-symbol {
+        display: none;
+    }
+
+    .spokes-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 13px;
+        width: 100%;
+    }
+
+    .spoke-card:nth-child(5),
+    .spoke-card:nth-child(6),
+    .spoke-card:nth-child(7) {
+        grid-column: auto;
+    }
+
+    .spoke-card {
+        min-height: 250px;
+        padding: 18px 15px;
+    }
+
+    .spoke-card .institution-logo {
+        width: 58px;
+        height: 58px;
+        flex-basis: 58px;
+    }
+
+    .spoke-content h3 {
+        font-size: 14px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 430px) {
+
+    .spokes-grid {
+        grid-template-columns: 1fr;
+        max-width: 330px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .spoke-card {
+        min-height: 220px;
+    }
+
+    .hub-card {
+        align-items: flex-start;
+    }
+
+    .hub-logo {
+        width: 62px;
+        height: 62px;
+        flex-basis: 62px;
+    }
+
+    .hub-card .institution-content h3 {
+        font-size: 17px;
+    }
+
+}
+
+.spokes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+
+    width: min(100%, 1020px);
+    margin: 0 auto;
+}
+
+.spoke-card {
+    flex: 0 1 calc(25% - 12px);
+    min-width: 220px;
+    max-width: 246px;
+}
+
+@media (max-width: 1000px) {
+    .spoke-card {
+        flex-basis: calc(33.333% - 11px);
+    }
+}
+
+@media (max-width: 700px) {
+    .spoke-card {
+        flex-basis: calc(50% - 8px);
+    }
+}
+
+@media (max-width: 430px) {
+    .spoke-card {
+        flex-basis: 100%;
+        max-width: 330px;
+    }
+}
+/* =========================================================
+   FINAL HUB-AND-SPOKES ALIGNMENT OVERRIDE
+   Keeps all spoke cards centered, including the last row.
+========================================================= */
+
+.spokes-grid {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 18px;
+    width: min(100%, 1060px);
+    margin: 0 auto;
+}
+
+.spoke-card,
+.partner-card {
+    position: relative;
+    display: flex;
+    flex: 0 1 calc(25% - 14px);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 220px;
+    max-width: 250px;
+    min-height: 270px;
+    padding: 22px 18px;
+}
+
+.spoke-card img,
+.partner-card img,
+.spoke-logo,
+.partner-logo,
+.partner-logo-placeholder {
+    object-fit: contain;
+}
+
+/* Remove old CSS Grid placement rules when Flexbox is used. */
+.spoke-card:nth-child(5),
+.spoke-card:nth-child(6),
+.spoke-card:nth-child(7),
+.partner-card:nth-child(5),
+.partner-card:nth-child(6),
+.partner-card:nth-child(7) {
+    grid-column: auto !important;
+}
+
+@media (max-width: 1000px) {
+    .spokes-grid {
+        width: min(100%, 800px);
+    }
+
+    .spoke-card,
+    .partner-card {
+        flex: 0 1 calc(33.333% - 14px);
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 700px) {
+    .spokes-grid {
+        width: 100%;
+        gap: 14px;
+    }
+
+    .spoke-card,
+    .partner-card {
+        flex: 0 1 calc(50% - 7px);
+        min-width: 0;
+        max-width: none;
+        min-height: 250px;
+        padding: 20px 14px;
+    }
+}
+
+@media (max-width: 430px) {
+    .spokes-grid {
+        width: 100%;
+        max-width: 330px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .spoke-card,
+    .partner-card {
+        flex: 0 1 100%;
+        max-width: 330px;
+        min-height: 220px;
+    }
+}
+@media (max-width: 600px) {
+
+    .overview-network {
+        height: 285px;
+        overflow: visible;
+    }
+
+    .network-center {
+        width: 112px;
+        height: 112px;
+    }
+
+    .hub-logo-main {
+        width: 52px;
+        height: 52px;
+        margin-bottom: 4px;
+    }
+
+    .network-center strong {
+        font-size: 10px;
+    }
+
+    .network-center span {
+        font-size: 7px;
+    }
+
+    .partner-orbit {
+        width: 270px;
+        height: 270px;
+    }
+
+    .partner-node {
+        width: 48px;
+    }
+
+    .partner-logo {
+        width: 45px;
+        height: 45px;
+        padding: 5px;
+    }
+
+    .partner-node > span {
+        font-size: 6.2px;
+        line-height: 1.25;
+    }
+
+    .node-1 > span {
+        width: 90px;
+        bottom: 50px;
+    }
+
+    .node-2 > span {
+        width: 58px;
+        top: 49px;
+    }
+
+    .node-3 > span {
+        width: 64px;
+        top: 49px;
+    }
+
+    .node-4 > span,
+    .node-5 > span {
+        width: 68px;
+        top: 49px;
+    }
+
+    .node-6 > span {
+        width: 58px;
+        top: 49px;
+    }
+
+    .node-7 > span {
+        width: 75px;
+        top: 49px;
+    }
+
+    .overview-card-bottom {
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .overview-card-bottom span {
+        font-size: 8px;
+    }
+
+}
+/* your existing CSS */
+
+/* ... all your existing sections ... */
+
+
+/* =========================================================
+   YOUR EXISTING RESPONSIVE CSS
+========================================================= */
+
+@media (max-width: 600px) {
+    /* existing code */
+}
+
+
+/* =========================================================
+   ADD THIS AT THE VERY END
+   INSTITUTION OFFICIAL WEBSITE BUTTON
+========================================================= */
+
+.institution-website {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    width: fit-content;
+
+    margin-top: 14px;
+    padding: 7px 11px;
+
+    color: var(--teal);
+    background: #edf7f8;
+
+    border: 1px solid #cce4e7;
+    border-radius: 6px;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    line-height: 1;
+
+    transition: var(--transition);
+}
+
+.institution-website i:first-child {
+    font-size: 9px;
+}
+
+.institution-website i:last-child {
+    font-size: 7px;
+    transition: transform 0.25s ease;
+}
+
+.institution-website:hover {
+    color: var(--white);
+    background: var(--teal);
+    border-color: var(--teal);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 14px rgba(14, 116, 144, 0.16);
+}
+
+.institution-website:hover i:last-child {
+    transform: translate(2px, -2px);
+}
+
+
+/* HUB WEBSITE BUTTON */
+
+.hub-card .institution-website {
+    margin-top: 12px;
+    padding: 8px 13px;
+    font-size: 9px;
+}
+
+
+/* SPOKE CONTENT */
+
+.spoke-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+
+/* Keep button near bottom of card */
+
+.spoke-card .institution-website {
+    margin-top: auto;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .institution-website {
+        font-size: 8px;
+        padding: 7px 9px;
+    }
+
+    .hub-card .institution-website {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+
+@media (max-width: 430px) {
+
+    .institution-website {
+        font-size: 9px;
+        padding: 8px 11px;
+    }
+
+}
