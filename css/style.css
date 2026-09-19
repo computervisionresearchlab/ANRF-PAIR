@@ -3105,6 +3105,10 @@ button {
         font-size: 8px;
     }
 
+    .brand-text {
+        display: none;
+    }
+
 }
 /* your existing CSS */
 
