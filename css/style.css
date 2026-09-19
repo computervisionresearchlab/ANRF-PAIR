@@ -85,8 +85,6 @@ button {
     max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
     box-sizing: border-box;
 }
 
@@ -109,6 +107,7 @@ button {
 }
 
 .top-bar-inner {
+    padding-top: 4px;
     min-height: 34px;
     display: flex;
     align-items: center;
@@ -153,7 +152,7 @@ button {
     align-items: center;
     justify-content: space-between;
 
-    gap: 25px;
+    gap: px;
 }
 
 /* =========================
@@ -2020,6 +2019,18 @@ button {
         z-index: 1001;
     }
 
+
+    .brand-small {
+        font-size: 8px;
+        letter-spacing: 0.8px;
+    }
+
+    .brand-title {
+        font-size: 18px;
+        letter-spacing: 0.4px;
+    }
+
+
     .main-nav {
         position: absolute;
 
@@ -2132,12 +2143,13 @@ button {
     }
 
     .brand-small {
-        font-size: 8px;
-        letter-spacing: 0.8px;
+        font-size: 7px;
+        letter-spacing: 0.5px;
     }
 
     .brand-title {
-        font-size: 21px;
+        font-size: 16px;
+        letter-spacing: 0.2px;
     }
 
     .hero-section {
@@ -2428,11 +2440,13 @@ button {
 @media (max-width: 380px) {
 
     .brand-small {
-        font-size: 7px;
+        font-size: 6px;
+        letter-spacing: 0.3px;
     }
 
     .brand-title {
-        font-size: 19px;
+        font-size: 14px;
+        letter-spacing: 0;
     }
 
     .hero-content h1 {
@@ -3105,9 +3119,8 @@ button {
         font-size: 8px;
     }
 
-    .brand-text {
-        display: none;
-    }
+
+
 
 }
 /* your existing CSS */
