@@ -6,6 +6,12 @@
 
 /* ================= ROOT VARIABLES ================= */
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 :root {
 
     --navy: #102f4a;
@@ -55,6 +61,7 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
+    
 }
 
 body {
@@ -63,6 +70,12 @@ body {
     background: var(--white);
     line-height: 1.7;
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-width: 0;
 }
 
 img {
@@ -80,8 +93,13 @@ button {
 }
 
 .container {
-    width: min(1180px, calc(100% - 40px));
-    margin: 0 auto;
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
 }
 
 
@@ -135,26 +153,41 @@ button {
 }
 
 .main-header {
+    width: 100%;
     background: var(--white);
+    position: relative;
+    z-index: 1000;
 }
 
 .header-inner {
+    width: 100%;
     min-height: 82px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
+
+    gap: 25px;
 }
+
+/* =========================
+   BRAND
+========================= */
 
 .brand {
     display: flex;
     align-items: center;
     gap: 13px;
-    flex-shrink: 0;
+
+    flex: 1 1 auto;
+    min-width: 0;
+
+    text-decoration: none;
 }
 
 .brand-logo {
     object-fit: contain;
+    flex-shrink: 0;
 }
 
 .anrf-logo {
@@ -168,14 +201,20 @@ button {
 }
 
 .brand-divider {
-    height: 38px;
     width: 1px;
+    height: 38px;
+
+    flex-shrink: 0;
+
     background: var(--border);
 }
 
 .brand-text {
     display: flex;
     flex-direction: column;
+
+    min-width: 0;
+
     line-height: 1.1;
 }
 
@@ -184,6 +223,8 @@ button {
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 1.3px;
+
+    white-space: nowrap;
 }
 
 .brand-title {
@@ -192,20 +233,36 @@ button {
     font-size: 25px;
     font-weight: 800;
     letter-spacing: 1px;
+
+    white-space: nowrap;
 }
+
+
+/* =========================
+   NAVIGATION
+========================= */
 
 .main-nav {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+
     gap: 5px;
+
+    flex: 0 1 auto;
 }
 
 .nav-link {
     color: var(--text);
     font-size: 12px;
     font-weight: 600;
+
     padding: 10px 13px;
+
     border-radius: 6px;
+
+    white-space: nowrap;
+
     transition: var(--transition);
 }
 
@@ -218,14 +275,23 @@ button {
 .nav-conclave {
     display: flex;
     align-items: center;
+    justify-content: center;
+
     gap: 8px;
+
     margin-left: 8px;
     padding: 11px 17px;
+
     border-radius: 6px;
+
     color: var(--white);
     background: var(--navy);
+
     font-size: 11px;
     font-weight: 700;
+
+    white-space: nowrap;
+
     transition: var(--transition);
 }
 
@@ -238,12 +304,28 @@ button {
     font-size: 10px;
 }
 
+
+/* =========================
+   MOBILE BUTTON
+========================= */
+
 .menu-toggle {
     display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
     border: none;
     background: transparent;
+
     color: var(--navy);
     font-size: 24px;
+
     cursor: pointer;
 }
 
@@ -1946,38 +2028,50 @@ button {
 
 @media (max-width: 850px) {
 
-    .top-links {
-        display: none;
-    }
-
     .menu-toggle {
-        display: block;
+        display: flex;
         position: relative;
         z-index: 1001;
     }
 
     .main-nav {
         position: absolute;
+
         top: 100%;
         left: 0;
+        right: 0;
+
         width: 100%;
+
         display: flex;
         flex-direction: column;
         align-items: stretch;
-        gap: 0;
+
+        gap: 3px;
+
         padding: 12px 20px 20px;
+
         background: var(--white);
+
         border-top: 1px solid var(--border);
+
         box-shadow: 0 15px 25px rgba(0, 0, 0, 0.08);
-        transform: translateY(-20px);
+
+        transform: translateY(-15px);
+
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        transition: var(--transition);
+
+        transition:
+            opacity 0.25s ease,
+            transform 0.25s ease,
+            visibility 0.25s ease;
     }
 
     .main-nav.open {
         transform: translateY(0);
+
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
@@ -1985,44 +2079,21 @@ button {
 
     .nav-link {
         width: 100%;
+
         padding: 13px 12px;
+
         border-radius: 5px;
+
+        text-align: left;
     }
 
     .nav-conclave {
+        width: 100%;
+
         justify-content: center;
+
         margin: 10px 0 0;
     }
-
-    .hero-section {
-        min-height: 650px;
-    }
-
-    .overview-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-
-    .overview-visual {
-        max-width: 550px;
-        width: 100%;
-        margin: 0 auto;
-    }
-
-    .theme-grid,
-    .theme-leadership-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .spokes-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .footer-main {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 45px 30px;
-    }
-
 }
 
 
@@ -2031,7 +2102,9 @@ button {
 @media (max-width: 600px) {
 
     .container {
-        width: calc(100% - 30px);
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
     .top-bar-inner {
