@@ -1,7 +1,275 @@
-const menuToggle=document.querySelector('.menu-toggle');
-const nav=document.querySelector('.nav');
-menuToggle?.addEventListener('click',()=>nav.classList.toggle('open'));
-document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
-const eventDate=new Date('2026-10-14T09:00:00+05:30').getTime();
-function countdown(){const d=eventDate-Date.now();const vals={days:Math.max(0,Math.floor(d/86400000)),hours:Math.max(0,Math.floor(d/3600000)%24),minutes:Math.max(0,Math.floor(d/60000)%60),seconds:Math.max(0,Math.floor(d/1000)%60)};Object.entries(vals).forEach(([k,v])=>{const el=document.getElementById(k);if(el)el.textContent=String(v).padStart(2,'0')})}countdown();setInterval(countdown,1000);
-document.querySelectorAll('.tab').forEach(tab=>tab.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.day').forEach(d=>d.classList.remove('active'));tab.classList.add('active');document.getElementById(tab.dataset.day).classList.add('active')}));
+/* =========================================================
+   MOBILE NAVIGATION
+   ========================================================= */
+
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".nav");
+
+
+menuToggle?.addEventListener("click", () => {
+    nav?.classList.toggle("open");
+});
+
+
+/* Close mobile menu when a navigation link is clicked */
+
+document.querySelectorAll(".nav a").forEach((link) => {
+
+    link.addEventListener("click", () => {
+
+        nav?.classList.remove("open");
+
+    });
+
+});
+
+
+/* =========================================================
+   EVENT COUNTDOWN
+   Event Date:
+   15 October 2026
+   09:00 AM IST
+   ========================================================= */
+
+const eventDate = new Date(
+    "2026-10-15T09:00:00+05:30"
+).getTime();
+
+
+function countdown() {
+
+    const now = Date.now();
+
+    const distance = eventDate - now;
+
+
+    /* -----------------------------------------------------
+       If the event has started
+       ----------------------------------------------------- */
+
+    if (distance <= 0) {
+
+        const countdownElements = {
+            days: document.getElementById("days"),
+            hours: document.getElementById("hours"),
+            minutes: document.getElementById("minutes"),
+            seconds: document.getElementById("seconds")
+        };
+
+
+        Object.values(countdownElements).forEach((element) => {
+
+            if (element) {
+                element.textContent = "00";
+            }
+
+        });
+
+        return;
+    }
+
+
+    /* -----------------------------------------------------
+       Calculate remaining time
+       ----------------------------------------------------- */
+
+    const days = Math.floor(
+        distance / (1000 * 60 * 60 * 24)
+    );
+
+    const hours = Math.floor(
+        (distance / (1000 * 60 * 60)) % 24
+    );
+
+    const minutes = Math.floor(
+        (distance / (1000 * 60)) % 60
+    );
+
+    const seconds = Math.floor(
+        (distance / 1000) % 60
+    );
+
+
+    /* -----------------------------------------------------
+       Update countdown elements
+       ----------------------------------------------------- */
+
+    const values = {
+        days,
+        hours,
+        minutes,
+        seconds
+    };
+
+
+    Object.entries(values).forEach(([key, value]) => {
+
+        const element = document.getElementById(key);
+
+        if (element) {
+
+            element.textContent = String(value).padStart(
+                2,
+                "0"
+            );
+
+        }
+
+    });
+
+}
+
+
+/* Initial countdown */
+
+countdown();
+
+
+/* Update countdown every second */
+
+setInterval(countdown, 1000);
+
+
+/* =========================================================
+   PROGRAMME DAY TABS
+   ========================================================= */
+
+const programmeTabs = document.querySelectorAll(
+    ".programme-tab"
+);
+
+const programmeDays = document.querySelectorAll(
+    ".programme-day"
+);
+
+
+programmeTabs.forEach((tab) => {
+
+    tab.addEventListener("click", () => {
+
+        /* -------------------------------------------------
+           Remove active state from all tabs
+           ------------------------------------------------- */
+
+        programmeTabs.forEach((item) => {
+
+            item.classList.remove("active");
+
+        });
+
+
+        /* -------------------------------------------------
+           Hide all programme days
+           ------------------------------------------------- */
+
+        programmeDays.forEach((day) => {
+
+            day.classList.remove("active");
+
+        });
+
+
+        /* -------------------------------------------------
+           Activate clicked tab
+           ------------------------------------------------- */
+
+        tab.classList.add("active");
+
+
+        /* -------------------------------------------------
+           Get corresponding programme day
+           ------------------------------------------------- */
+
+        const targetDay = document.getElementById(
+            tab.dataset.day
+        );
+
+
+        /* -------------------------------------------------
+           Display corresponding day
+           ------------------------------------------------- */
+
+        if (targetDay) {
+
+            targetDay.classList.add("active");
+
+        }
+
+    });
+
+});
+
+
+/* =========================================================
+   PROGRAMME TAB ACCESSIBILITY
+   ========================================================= */
+
+programmeTabs.forEach((tab) => {
+
+    tab.addEventListener("keydown", (event) => {
+
+        /*
+         * Allow keyboard users to activate the tab
+         * using Enter or Space.
+         */
+
+        if (
+            event.key === "Enter" ||
+            event.key === " "
+        ) {
+
+            event.preventDefault();
+
+            tab.click();
+
+        }
+
+    });
+
+});
+
+
+/* =========================================================
+   CLOSE MOBILE MENU WHEN CLICKING OUTSIDE
+   ========================================================= */
+
+document.addEventListener("click", (event) => {
+
+    if (!nav || !menuToggle) {
+        return;
+    }
+
+
+    const clickedInsideNav =
+        nav.contains(event.target);
+
+    const clickedMenuButton =
+        menuToggle.contains(event.target);
+
+
+    if (
+        nav.classList.contains("open") &&
+        !clickedInsideNav &&
+        !clickedMenuButton
+    ) {
+
+        nav.classList.remove("open");
+
+    }
+
+});
+
+
+/* =========================================================
+   ESCAPE KEY — CLOSE MOBILE MENU
+   ========================================================= */
+
+document.addEventListener("keydown", (event) => {
+
+    if (event.key === "Escape") {
+
+        nav?.classList.remove("open");
+
+    }
+
+});
