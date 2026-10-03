@@ -364,26 +364,39 @@ button {
 }
 
 .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    color: #b7d8e7;
-    border: 1px solid rgba(183, 216, 231, 0.3);
-    background: rgba(255, 255, 255, 0.05);
-    padding: 7px 13px;
-    border-radius: 30px;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1.6px;
-    margin-top: 10px; 
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    max-width: 900px;
+
+    margin: 22px 0 20px;
+
+    color: #e8f2f0;
+
+    font-size: 18px;
+    line-height: 1.55;
+
+    font-weight: 600;
+
+    letter-spacing: 0.1px;
 }
 
+
 .badge-dot {
-    width: 6px;
-    height: 6px;
+    width: 10px;
+    height: 10px;
+
+    flex: 0 0 10px;
+
+    margin-top: 8px;
+
+    background: #9bcf6d;
+
     border-radius: 50%;
-    background: #7bc99b;
-    box-shadow: 0 0 0 4px rgba(123, 201, 155, 0.12);
+
+    box-shadow:
+        0 0 0 5px rgba(155, 207, 109, 0.15);
 }
 
 .hero-content h1 {
@@ -436,19 +449,33 @@ button {
 }
 
 .hero-consortium-name {
-    color: #b9d1de;
-    font-size: 13px;
-    max-width: 600px;
-    line-height: 1.8;
-    margin-top: 8px;
+    max-width: 900px;
+
+    margin: 20px 0 18px;
+
+    color: #b8e09e;
+
+    font-size: 25px;
+    line-height: 1.45;
+
+    font-weight: 700;
+
+    letter-spacing: -0.2px;
 }
 
 .hero-description {
-    color: #d1dfe7;
-    font-size: 14px;
-    max-width: 600px;
-    line-height: 1.9;
-    margin-top: 22px;
+    max-width: 850px;
+
+    margin: 0 0 28px;
+
+    color: #e0eceb;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+    font-weight: 400;
+
+    letter-spacing: 0;
 }
 
 .hero-buttons {
@@ -3877,6 +3904,58 @@ button {
     .institution-website {
         font-size: 9px;
         padding: 8px 11px;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .hero-badge {
+        font-size: 15px;
+        line-height: 1.5;
+
+        margin-top: 18px;
+        margin-bottom: 16px;
+    }
+
+    .badge-dot {
+        width: 8px;
+        height: 8px;
+
+        flex-basis: 8px;
+
+        margin-top: 7px;
+    }
+
+    .hero-consortium-name {
+        font-size: 20px;
+        line-height: 1.45;
+
+        margin: 16px 0;
+    }
+
+    .hero-description {
+        font-size: 15px;
+        line-height: 1.65;
+
+        margin-bottom: 24px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .hero-badge {
+        font-size: 14px;
+    }
+
+    .hero-consortium-name {
+        font-size: 18px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+        line-height: 1.6;
     }
 
 }
