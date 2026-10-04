@@ -1728,40 +1728,25 @@ button {
 .leadership-person a i {
     font-size: 8px;
 }
-/* =========================================================
-   SPOKE PI / CO-LEADERSHIP SECTION
-   ========================================================= */
-
-
-/* =========================================================
-   SECTION
-   ========================================================= */
+/* ==========================================
+   SPOKE PRINCIPAL INVESTIGATORS
+   COMPACT HORIZONTAL LEADERSHIP CARDS
+========================================== */
 
 .spoke-pi-section {
     background: var(--off-white);
-    border-top: 1px solid var(--border);
-
-    padding-top: 75px;
-    padding-bottom: 80px;
+    padding: 70px 0 80px;
 }
 
-
-/* =========================================================
-   SECTION HEADING
-   ========================================================= */
-
 .spoke-pi-section .section-heading {
-    width: 100%;
     max-width: 850px;
-
-    margin: 0 auto 38px;
-
+    margin: 0 auto 40px;
     text-align: center;
 }
 
 .spoke-pi-section .section-heading h2 {
     text-align: center;
-    line-height: 1.15;
+    line-height: 1.2;
 }
 
 .spoke-pi-section .section-heading h2 span {
@@ -1769,175 +1754,82 @@ button {
 }
 
 
-/*
-   If your HTML is:
-
-   <h2>
-       Spoke Principal Investigators
-       <br>
-       &
-       <br>
-       <span>Co-Leadership</span>
-   </h2>
-
-   this keeps the three lines centered.
-*/
-
-
-/* =========================================================
-   PI GRID
-   ========================================================= */
+/* GRID: FOUR CARDS + THREE CENTERED */
 
 .spoke-pi-grid {
-    width: min(1120px, 100%);
-
-    margin: 0 auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(12, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
 
     gap: 18px;
+    max-width: 1280px;
+    margin: 0 auto;
 }
 
 
-/* =========================================================
-   DESKTOP RHYTHMIC LAYOUT
-   ========================================================= */
-
-
-/* ---------- FIRST ROW : 3 CARDS ---------- */
-
-.spoke-pi-card:nth-child(1) {
-    grid-column: 2 / span 3;
-}
-
-.spoke-pi-card:nth-child(2) {
-    grid-column: 5 / span 3;
-}
-
-.spoke-pi-card:nth-child(3) {
-    grid-column: 8 / span 3;
-}
-
-
-/* ---------- SECOND ROW : 4 CARDS ---------- */
-
-.spoke-pi-card:nth-child(4) {
-    grid-column: 1 / span 3;
-}
-
-.spoke-pi-card:nth-child(5) {
-    grid-column: 4 / span 3;
-}
-
-.spoke-pi-card:nth-child(6) {
-    grid-column: 7 / span 3;
-}
-
-.spoke-pi-card:nth-child(7) {
-    grid-column: 10 / span 3;
-}
-
-
-/* =========================================================
-   PI CARD
-   ========================================================= */
+/* HORIZONTAL PROFILE CARD */
 
 .spoke-pi-card {
     position: relative;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: flex-start;
 
-    background: var(--white);
+    flex: 0 1 calc((100% - 54px) / 4);
+    min-width: 0;
 
-    border: 1px solid var(--border);
+    padding: 17px 13px;
+    gap: 12px;
 
-    border-radius: var(--radius-md);
+    background: #ffffff;
+    border: 1px solid #e3eaf0;
+    border-radius: 10px;
 
-    overflow: hidden;
-
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 3px 12px rgba(20, 48, 70, 0.035);
 
     transition:
         transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
+        box-shadow 0.3s ease;
 }
-
-
-/* =========================================================
-   REMOVE BLUE TOP LINE
-   ========================================================= */
 
 .spoke-pi-card::before {
     display: none !important;
 }
 
-
-/* =========================================================
-   CARD HOVER
-   ========================================================= */
-
 .spoke-pi-card:hover {
-    transform: translateY(-5px);
-
-    border-color: #cbdbe2;
-
-    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+    box-shadow: 0 7px 22px rgba(20, 48, 70, 0.09);
 }
 
 
-/* =========================================================
-   CARD NUMBER
-   ========================================================= */
+/* RESET ALL PREVIOUS GRID POSITIONS */
 
-.spoke-pi-number {
-    position: absolute;
-
-    top: 13px;
-    right: 14px;
-
-    color: rgba(180, 194, 203, 0.9);
-
-    font-family: 'Montserrat', sans-serif;
-
-    font-size: 10px;
-    font-weight: 800;
-
-    line-height: 1;
-
-    z-index: 5;
-
-    pointer-events: none;
+.spoke-pi-card:nth-child(n) {
+    grid-column: auto;
 }
 
 
-/* =========================================================
-   PI PHOTO CONTAINER
-   ========================================================= */
+/* SMALL PORTRAIT — SAME AS THEME LEAD */
 
 .spoke-pi-photo {
-    width: 100%;
-    height: 220px;
+    display: block;
 
-    padding: 0;
+    flex: 0 0 55px;
+
+    width: 55px;
+    height: 65px;
+
     margin: 0;
+    padding: 0;
 
     overflow: hidden;
 
-    background: transparent;
-
-    display: block;
-
+    background: #e3ebef;
     border: none;
+    border-radius: 7px;
 }
-
-
-/* =========================================================
-   PI PHOTO
-   ========================================================= */
 
 .spoke-pi-photo img {
     display: block;
@@ -1945,422 +1837,191 @@ button {
     width: 100%;
     height: 100%;
 
-    padding: 0;
     margin: 0;
-
-    border: none;
-    outline: none;
-
-    box-shadow: none;
+    padding: 0;
 
     object-fit: cover;
-
     object-position: center top;
 
-    transition:
-        transform 0.4s ease;
+    border: none;
+    border-radius: 7px;
+    box-shadow: none;
+
+    transition: transform 0.3s ease;
 }
-
-
-/* =========================================================
-   IMAGE HOVER
-   ========================================================= */
 
 .spoke-pi-card:hover .spoke-pi-photo img {
-    transform: scale(1.02);
+    transform: scale(1.03);
 }
 
 
-/* =========================================================
-   ASHISH GHOSH PHOTO
-   ========================================================= */
-
-/*
-   Ashish Ghosh Sir's source photograph has a
-   different composition, so we adjust only
-   its vertical positioning.
-*/
+/* SPECIAL PHOTO POSITIONING */
 
 .spoke-pi-card:nth-child(3) .spoke-pi-photo img {
     object-position: center 30%;
 }
 
 
-/* =========================================================
-   PI INFORMATION
-   ========================================================= */
+/* TEXT AREA */
 
 .spoke-pi-info {
-    padding: 15px 16px 17px;
-
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 
     flex: 1;
+    min-width: 0;
+
+    padding: 0;
+    margin: 0;
 }
 
 
-/* =========================================================
-   PRINCIPAL INVESTIGATOR LABEL
-   ========================================================= */
+/* DESIGNATION */
 
 .spoke-pi-info .leadership-role {
     display: block;
 
+    color: var(--teal);
+
     font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.7px;
+    line-height: 1.4;
 
-    letter-spacing: 1.3px;
-
-    line-height: 1.3;
+    margin: 0 0 4px;
 }
 
 
-/* =========================================================
-   PI NAME
-   ========================================================= */
+/* FACULTY NAME */
 
 .spoke-pi-info h3 {
     color: var(--navy);
 
     font-family: 'Montserrat', sans-serif;
 
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.4;
 
-    line-height: 1.35;
-
-    margin-top: 7px;
-    margin-bottom: 0;
+    margin: 0;
 }
 
 
-/* =========================================================
-   INSTITUTION
-   ========================================================= */
+/* INSTITUTION */
 
 .spoke-pi-institution {
     color: var(--text);
 
     font-size: 10px;
+    line-height: 1.45;
 
-    line-height: 1.5;
-
-    margin-top: 7px;
-    margin-bottom: 0;
-
+    margin: 5px 0 0;
     text-align: left;
 }
 
 
-/* =========================================================
-   LOCATION
-   ========================================================= */
+/* LOCATION */
 
 .spoke-pi-location {
     color: var(--text-light);
 
     font-size: 9px;
-
     line-height: 1.4;
 
-    margin-top: 4px;
-    margin-bottom: 0;
-
+    margin: 3px 0 0;
     text-align: left;
 }
 
 
-/* =========================================================
-   FACULTY PROFILE LINK
-   ========================================================= */
+/* FACULTY PROFILE */
 
 .faculty-profile-link {
     display: inline-flex;
-
     align-items: center;
 
     gap: 5px;
 
     width: fit-content;
 
-    margin-top: 12px;
-
     color: var(--teal);
 
-    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    line-height: 1.4;
 
-    font-size: 8px;
-
-    font-weight: 700;
-
-    letter-spacing: 0.25px;
-
-    line-height: 1.3;
+    margin-top: 8px;
 
     text-decoration: none;
 
-    transition:
-        color 0.25s ease,
-        gap 0.25s ease;
+    transition: color 0.25s ease;
 }
-
-
-/* External link arrow */
-
-.faculty-profile-link span {
-    display: inline-block;
-
-    font-size: 11px;
-
-    line-height: 1;
-
-    transition:
-        transform 0.25s ease;
-}
-
-
-/* Profile link hover */
 
 .faculty-profile-link:hover {
     color: var(--navy);
-
-    gap: 8px;
 }
 
-.faculty-profile-link:hover span {
-    transform: translate(2px, -2px);
+.faculty-profile-link span {
+    font-size: 11px;
 }
 
 
-/* =========================================================
-   TABLET
-   3 + 2 + 2
-   ========================================================= */
+/* HIDE DECORATIVE CARD NUMBERS */
 
-@media (max-width: 1000px) {
+.spoke-pi-number {
+    display: none;
+}
+
+
+/* ==========================================
+   TABLET — TWO CARDS PER ROW
+========================================== */
+
+@media (max-width: 1100px) {
 
     .spoke-pi-grid {
-        grid-template-columns: repeat(6, 1fr);
-
-        gap: 18px;
+        max-width: 800px;
+        gap: 16px;
     }
-
-
-    /* Reset desktop positioning */
-
-    .spoke-pi-card:nth-child(1),
-    .spoke-pi-card:nth-child(2),
-    .spoke-pi-card:nth-child(3),
-    .spoke-pi-card:nth-child(4),
-    .spoke-pi-card:nth-child(5),
-    .spoke-pi-card:nth-child(6),
-    .spoke-pi-card:nth-child(7) {
-        grid-column: auto;
-    }
-
-
-    /* ---------- ROW 1 ---------- */
-
-    .spoke-pi-card:nth-child(1) {
-        grid-column: 1 / span 2;
-    }
-
-    .spoke-pi-card:nth-child(2) {
-        grid-column: 3 / span 2;
-    }
-
-    .spoke-pi-card:nth-child(3) {
-        grid-column: 5 / span 2;
-    }
-
-
-    /* ---------- ROW 2 ---------- */
-
-    .spoke-pi-card:nth-child(4) {
-        grid-column: 2 / span 2;
-    }
-
-    .spoke-pi-card:nth-child(5) {
-        grid-column: 4 / span 2;
-    }
-
-
-    /* ---------- ROW 3 ---------- */
-
-    .spoke-pi-card:nth-child(6) {
-        grid-column: 2 / span 2;
-    }
-
-    .spoke-pi-card:nth-child(7) {
-        grid-column: 4 / span 2;
-    }
-
-
-    .spoke-pi-photo {
-        height: 210px;
-    }
-}
-
-
-/* =========================================================
-   SMALL TABLET
-   ========================================================= */
-
-@media (max-width: 700px) {
-
-    .spoke-pi-section {
-        padding-top: 65px;
-        padding-bottom: 70px;
-    }
-
-
-    .spoke-pi-section .section-heading {
-        max-width: 700px;
-
-        margin-bottom: 32px;
-    }
-
-
-    .spoke-pi-grid {
-        grid-template-columns: repeat(2, 1fr);
-
-        gap: 18px;
-    }
-
-
-    /* Reset grid positioning */
-
-    .spoke-pi-card:nth-child(1),
-    .spoke-pi-card:nth-child(2),
-    .spoke-pi-card:nth-child(3),
-    .spoke-pi-card:nth-child(4),
-    .spoke-pi-card:nth-child(5),
-    .spoke-pi-card:nth-child(6),
-    .spoke-pi-card:nth-child(7) {
-        grid-column: auto;
-    }
-
-
-    .spoke-pi-photo {
-        height: 220px;
-    }
-
-
-    .spoke-pi-info {
-        padding: 15px 15px 17px;
-    }
-
-
-    .spoke-pi-info h3 {
-        font-size: 14px;
-    }
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 520px) {
-
-    .spoke-pi-section {
-        padding-top: 60px;
-        padding-bottom: 65px;
-    }
-
-
-    .spoke-pi-section .section-heading {
-        max-width: 100%;
-
-        margin-bottom: 30px;
-
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-
-    .spoke-pi-section .section-heading h2 {
-        line-height: 1.15;
-    }
-
-
-    .spoke-pi-grid {
-        grid-template-columns: 1fr;
-
-        gap: 18px;
-    }
-
-
-    /* Reset all desktop/tablet positions */
-
-    .spoke-pi-card:nth-child(1),
-    .spoke-pi-card:nth-child(2),
-    .spoke-pi-card:nth-child(3),
-    .spoke-pi-card:nth-child(4),
-    .spoke-pi-card:nth-child(5),
-    .spoke-pi-card:nth-child(6),
-    .spoke-pi-card:nth-child(7) {
-        grid-column: auto;
-    }
-
 
     .spoke-pi-card {
-        width: 100%;
-        max-width: 350px;
+        flex-basis: calc((100% - 16px) / 2);
+    }
+}
 
-        margin-left: auto;
-        margin-right: auto;
+
+/* ==========================================
+   MOBILE — SINGLE COLUMN
+========================================== */
+
+@media (max-width: 600px) {
+
+    .spoke-pi-section {
+        padding: 55px 0 65px;
     }
 
+    .spoke-pi-grid {
+        max-width: 440px;
+        gap: 12px;
+    }
+
+    .spoke-pi-card {
+        flex-basis: 100%;
+        padding: 15px;
+    }
 
     .spoke-pi-photo {
-        height: 240px;
+        flex-basis: 55px;
+        width: 55px;
+        height: 65px;
     }
-
-
-    .spoke-pi-info {
-        padding: 16px 17px 18px;
-    }
-
 
     .spoke-pi-info h3 {
-        font-size: 15px;
+        font-size: 13px;
     }
-
 
     .spoke-pi-institution {
         font-size: 10px;
-    }
-
-
-    .spoke-pi-location {
-        font-size: 9px;
-    }
-
-
-    .faculty-profile-link {
-        font-size: 8px;
-    }
-}
-
-
-/* =========================================================
-   VERY SMALL MOBILE
-   ========================================================= */
-
-@media (max-width: 380px) {
-
-    .spoke-pi-photo {
-        height: 220px;
-    }
-
-
-    .spoke-pi-info {
-        padding: 14px 15px 16px;
-    }
-
-
-    .spoke-pi-info h3 {
-        font-size: 14px;
     }
 }
 /* ================= CONCLAVE ================= */
