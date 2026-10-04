@@ -2539,7 +2539,7 @@ footer a {
 
         position: absolute;
 
-        top: 82px;
+        top: 100%;
 
         left: 16px;
         right: 16px;
@@ -3034,4 +3034,137 @@ footer a {
 .map-btn.active {
     background: var(--teal);
     color: #ffffff;
+}
+
+/* ---------------------------------------------------------
+   Improved Venue Details
+   --------------------------------------------------------- */
+.venue-address p {
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.event-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
+    background: #f8faf9;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #eef2f0;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #4a5d60;
+    font-size: 13px;
+}
+
+.detail-icon {
+    font-size: 16px;
+}
+
+.detail-item strong {
+    color: var(--navy);
+    font-weight: 700;
+}
+
+.map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #cb7e25 !important;
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.map-link:hover {
+    color: #a66215 !important;
+    transform: translateX(4px);
+}
+
+/* ---------------------------------------------------------
+   Improved Accommodation Details
+   --------------------------------------------------------- */
+.accommodation p {
+    line-height: 1.65;
+    margin-bottom: 16px;
+}
+
+.accommodation strong {
+    color: #f7d28a; /* Soft gold for contrast */
+}
+
+.booking-info {
+    margin: 25px 0 35px;
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 12px 12px 0;
+}
+
+.hostel-note {
+    margin-bottom: 0 !important;
+    font-size: 12px !important;
+    color: #b1cacc !important;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.booking-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 24px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.booking-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(224, 160, 47, 0.25);
+}
+
+
+.back-link:hover {
+    opacity: 1;
+    transform: translateX(-2px);
+}
+
+
+
+/* ---------------------------------------------------------
+   Top Return Bar
+   --------------------------------------------------------- */
+.top-return-bar {
+    background: rgba(0, 0, 0, 0.4);
+    font-size: 11px;
+    padding: 6px 0;
+    text-align: left;
+    border-bottom: 1px solid #ffffff15;
+}
+
+.header.scrolled .top-return-bar {
+    background: #0f2735;
+    border-bottom: 1px solid #00000030;
+}
+
+.top-return-bar a {
+    color: #ffffff;
+    opacity: 0.75;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+.top-return-bar a:hover {
+    opacity: 1;
 }
