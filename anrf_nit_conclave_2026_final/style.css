@@ -96,9 +96,9 @@ img {
    ========================================================= */
 
 .header {
-    position: absolute;
+    position: fixed;
 
-    z-index: 10;
+    z-index: 1000;
 
     top: 0;
     left: 0;
@@ -107,6 +107,33 @@ img {
     border-bottom: 1px solid #ffffff30;
 
     color: #ffffff;
+    
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.header.scrolled {
+    background-color: #ffffff;
+    color: var(--navy);
+    border-bottom: 1px solid transparent;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.header.scrolled .nav-button {
+    border-color: var(--navy);
+}
+
+.header.scrolled .nav-button:hover {
+    background: var(--navy);
+    color: #ffffff;
+}
+
+.header.scrolled .menu-toggle {
+    color: var(--navy);
+}
+
+.header.scrolled .logos span {
+    background: var(--navy);
+    opacity: 0.3;
 }
 
 
@@ -752,7 +779,7 @@ img {
 
     grid-template-columns:
         repeat(
-            5,
+            4,
             1fr
         );
 
@@ -908,7 +935,35 @@ img {
 
     gap: 18px;
 
-    margin: 20px 0;
+    margin: 0 0 20px 0;
+}
+
+.award-actions a {
+    text-decoration: none;
+}
+
+.award-actions p {
+    margin: 0;
+}
+
+.award-actions a u {
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--white);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 500;
+    display: inline-block;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.award-actions a:hover u {
+    background: var(--white);
+    color: var(--box-teal);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -2236,6 +2291,92 @@ footer a {
    RESPONSIVE DESIGN
    ========================================================= */
 
+
+/* =========================================================
+   SPEAKERS
+   ========================================================= */
+
+.speaker-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.speaker-card {
+    background: #ffffff;
+    border: 1px solid var(--light-border);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(23, 61, 72, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.speaker-card .avatar {
+    width: 80px;
+    height: 80px;
+    background: var(--pale);
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--teal);
+    object-fit: cover;
+}
+
+.speaker-card h3 {
+    font-size: 15px;
+    color: var(--navy);
+    margin: 0 0 6px;
+}
+
+.speaker-card .designation {
+    font-size: 12px;
+    color: var(--muted);
+    margin: 0 0 2px;
+}
+
+.speaker-card .organization {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--deep);
+    margin: 0 0 16px;
+}
+
+.speaker-card .topic-info {
+    margin-top: auto;
+    background: var(--pale);
+    padding: 12px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.speaker-card .topic-info strong {
+    display: block;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    margin-bottom: 4px;
+}
+
+.speaker-card .topic-info .topic-title {
+    font-size: 11px;
+    color: var(--deep);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.speaker-card .topic-info .time {
+    font-size: 11px;
+    color: var(--teal);
+    font-weight: 500;
+}
+
 @media (max-width: 1100px) {
 
     .nav {
@@ -2273,6 +2414,10 @@ footer a {
    ========================================================= */
 
 @media (max-width: 900px) {
+    .speaker-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 
     .container {
         width:
@@ -2367,6 +2512,10 @@ footer a {
    ========================================================= */
 
 @media (max-width: 700px) {
+    .speaker-grid {
+        grid-template-columns: 1fr;
+    }
+
 
     .container {
         width:
@@ -2407,9 +2556,24 @@ footer a {
     }
 
 
+
     .nav.open {
         display: flex;
     }
+    
+    .header.scrolled .nav {
+        color: #ffffff;
+    }
+    
+    .header.scrolled .nav .nav-button {
+        border-color: #ffffff99;
+    }
+
+    .header.scrolled .nav .nav-button:hover {
+        background: #ffffff;
+        color: var(--navy);
+    }
+
 
 
     .nav-button {
@@ -2485,10 +2649,6 @@ footer a {
             );
     }
 
-
-    .values article:last-child {
-        grid-column: 1 / -1;
-    }
 
 
     /* -----------------------------------------------------
@@ -2823,11 +2983,6 @@ footer a {
        Awards
        ----------------------------------------------------- */
 
-    .award-actions {
-        flex-direction: column;
-
-        align-items: stretch;
-    }
 
 
     .award-actions .button {
