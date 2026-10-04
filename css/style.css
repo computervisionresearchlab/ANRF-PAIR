@@ -1671,19 +1671,23 @@ button {
 }
 
 .agriculture-header {
-    background: #397957;
+    background: #B2CB91;
+    color: #16351F;
 }
 
 .health-header {
-    background: #28728a;
+    background: #FF9900;
+    color: #3A1D00;
 }
 
 .energy-header {
-    background: #a27728;
+    background: #FFFF66;
+    color: #332F00;
 }
 
 .environment-header {
-    background: #245b67;
+    background: #8ADFFF;
+    color: #073A4A;
 }
 
 .leadership-theme-header > i {
