@@ -1123,45 +1123,60 @@ img {
 }
 
 
+/* ==========================================
+   AGRICULTURE — GREEN
+========================================== */
+
 .agriculture .theme-top {
     background:
         linear-gradient(
             145deg,
-            #4a9664,
-            #1b4938
+            #B2CB91,
+            #7FA35F
         );
 }
 
+
+/* ==========================================
+   HEALTH — ORANGE
+========================================== */
 
 .health .theme-top {
     background:
         linear-gradient(
             145deg,
-            #4b91a3,
-            #277080
+            #FF9900,
+            #D96F00
         );
 }
 
+
+/* ==========================================
+   ENERGY — YELLOW
+========================================== */
 
 .energy .theme-top {
     background:
         linear-gradient(
             145deg,
-            #caa13f,
-            #a47725
+            #FFFF66,
+            #DADA45
         );
 }
 
+
+/* ==========================================
+   ENVIRONMENT — BLUE
+========================================== */
 
 .environment .theme-top {
     background:
         linear-gradient(
             145deg,
-            #4b9994,
-            #246a6d
+            #8ADFFF,
+            #55B8D4
         );
 }
-
 
 /* =========================================================
    ORGANIZERS

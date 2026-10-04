@@ -1221,20 +1221,55 @@ button {
     height: 140px;
 }
 
+/* ================================
+   AGRICULTURE — GREEN
+================================ */
+
 .theme-card.agriculture .theme-card-image {
-    background: linear-gradient(135deg, #397957, #7eaf70);
+    background: linear-gradient(
+        135deg,
+        #B2CB91,
+        #8FAF6F
+    );
 }
+
+
+/* ================================
+   HEALTH — ORANGE
+================================ */
 
 .theme-card.health .theme-card-image {
-    background: linear-gradient(135deg, #28728a, #5aabb1);
+    background: linear-gradient(
+        135deg,
+        #FF9900,
+        #E07800
+    );
 }
+
+
+/* ================================
+   ENERGY — YELLOW
+================================ */
 
 .theme-card.energy .theme-card-image {
-    background: linear-gradient(135deg, #a27728, #d4b052);
+    background: linear-gradient(
+        135deg,
+        #FFFF66,
+        #E6E64A
+    );
 }
 
+
+/* ================================
+   ENVIRONMENT — BLUE
+================================ */
+
 .theme-card.environment .theme-card-image {
-    background: linear-gradient(135deg, #245b67, #529b92);
+    background: linear-gradient(
+        135deg,
+        #8ADFFF,
+        #62BFD9
+    );
 }
 
 .theme-icon {
