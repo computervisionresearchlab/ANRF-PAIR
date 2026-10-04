@@ -1156,13 +1156,12 @@ img {
 ========================================== */
 
 .energy .theme-top {
-    background:
-        linear-gradient(
-            145deg,
-            #FFFF66,
-            #DADA45
-        );
+    background: linear-gradient(
+        145deg,
+        #ebc934
+    );
 }
+
 
 
 /* ==========================================
@@ -2131,14 +2130,14 @@ img {
     line-height: 1.6;
 }
 
-
+/* 
 .contact-card {
     padding: 22px 18px;
 
     background: #173b4a;
 
     border-radius: 16px;
-}
+} */
 
 
 .contact-card h3 {

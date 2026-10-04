@@ -1254,8 +1254,7 @@ button {
 .theme-card.energy .theme-card-image {
     background: linear-gradient(
         135deg,
-        #FFFF66,
-        #E6E64A
+        #ebc934
     );
 }
 
@@ -1672,22 +1671,18 @@ button {
 
 .agriculture-header {
     background: #B2CB91;
-    color: #16351F;
 }
 
 .health-header {
     background: #FF9900;
-    color: #3A1D00;
 }
 
 .energy-header {
-    background: #FFFF66;
-    color: #332F00;
+    background: #ebc934;
 }
 
 .environment-header {
     background: #8ADFFF;
-    color: #073A4A;
 }
 
 .leadership-theme-header > i {
@@ -3612,7 +3607,7 @@ button {
 /* Keep button near bottom of card */
 
 .spoke-card .institution-website {
-    margin-top: auto;
+    margin-top: 10px;
 }
 
 
