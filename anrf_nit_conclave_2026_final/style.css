@@ -3008,3 +3008,30 @@ footer a {
     }
 
 }
+/* ---------------------------------------------------------
+   Map Locations
+   --------------------------------------------------------- */
+.map-locations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.map-btn {
+    padding: 8px 16px;
+    background: var(--pale);
+    color: var(--teal);
+    border: 1px solid var(--teal);
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.map-btn:hover,
+.map-btn.active {
+    background: var(--teal);
+    color: #ffffff;
+}

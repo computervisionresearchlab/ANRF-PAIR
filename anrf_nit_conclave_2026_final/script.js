@@ -286,3 +286,22 @@ window.addEventListener("scroll", () => {
         header?.classList.remove("scrolled");
     }
 });
+
+/* =========================================================
+   MAP LOCATIONS TOGGLE
+   ========================================================= */
+
+const mapIframe = document.getElementById('venue-map-iframe');
+const mapBtns = document.querySelectorAll('.map-btn');
+
+if (mapIframe && mapBtns) {
+    mapBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            mapBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            const query = encodeURIComponent(btn.getAttribute('data-q'));
+            mapIframe.src = `https://www.google.com/maps?q=${query}&output=embed`;
+        });
+    });
+}
