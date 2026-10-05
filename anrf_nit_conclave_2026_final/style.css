@@ -379,7 +379,7 @@ img {
 
     z-index: 1;
 
-    padding-top: 75px;
+    padding-top: 140px;
 
     display: grid;
 
@@ -1000,23 +1000,13 @@ img {
 
 
 .section-top {
-    display: flex;
-
-    justify-content: space-between;
-    align-items: end;
-
-    gap: 30px;
-
     margin-bottom: 40px;
 }
 
-
 .section-top p {
-    max-width: 330px;
-
     color: #637a7c;
-
-    font-size: 13px;
+    font-size: 15px;
+    margin-top: 10px;
 }
 
 
@@ -1147,12 +1137,10 @@ img {
 
 .theme-card p {
     min-height: 55px;
-
     margin: 0;
-
     color: #657b80;
-
-    font-size: 11px;
+    font-size: 13px;
+    line-height: 1.5;
 }
 
 
@@ -1172,7 +1160,7 @@ img {
 
     color: #4e7e89;
 
-    font-size: 10px;
+    font-size: 13px;
 
     line-height: 2;
 }
@@ -2297,8 +2285,9 @@ footer a {
    ========================================================= */
 
 .speaker-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
     margin-top: 40px;
 }
@@ -2312,6 +2301,8 @@ footer a {
     box-shadow: 0 4px 15px rgba(23, 61, 72, 0.05);
     display: flex;
     flex-direction: column;
+    flex: 1 1 250px;
+    max-width: 270px;
 }
 
 .speaker-card .avatar {
@@ -2414,8 +2405,8 @@ footer a {
    ========================================================= */
 
 @media (max-width: 900px) {
-    .speaker-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .speaker-card {
+        max-width: calc(50% - 15px);
     }
 
 
@@ -2512,8 +2503,8 @@ footer a {
    ========================================================= */
 
 @media (max-width: 700px) {
-    .speaker-grid {
-        grid-template-columns: 1fr;
+    .speaker-card {
+        max-width: 100%;
     }
 
 
@@ -2593,7 +2584,7 @@ footer a {
     .hero-grid {
         grid-template-columns: 1fr;
 
-        padding-top: 100px;
+        padding-top: 120px;
     }
     .hero-badge {
         font-size: 13px;
