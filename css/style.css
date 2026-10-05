@@ -1177,8 +1177,8 @@ button {
 
 .theme-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
 }
 
 .theme-card {
@@ -1309,7 +1309,7 @@ button {
 .theme-card h3 {
     color: var(--navy);
     font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
+    font-size: 22px;
     line-height: 1.35;
     margin-top: 11px;
 }
@@ -1333,15 +1333,16 @@ button {
 .theme-focus span {
     position: relative;
     color: var(--text-light);
-    font-size: 10px;
-    padding-left: 14px;
+    font-size: 14px;
+    padding-left: 15px;
+    line-height: 1.5;
 }
 
 .theme-focus span::before {
     content: "";
     position: absolute;
     left: 0;
-    top: 8px;
+    top: 6px;
     width: 5px;
     height: 5px;
     border-radius: 50%;
@@ -2729,7 +2730,7 @@ button {
     }
 
     .theme-card h3 {
-        font-size: 18px;
+        font-size: 22px;
     }
 
     .hub-card {
