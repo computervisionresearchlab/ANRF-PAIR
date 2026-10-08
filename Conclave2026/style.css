@@ -2378,6 +2378,10 @@ footer a {
             );
     }
 
+    .values article:last-child {
+        grid-column: 2;
+    }
+
 
     .theme-grid {
         grid-template-columns:
@@ -2628,6 +2632,10 @@ footer a {
                 2,
                 1fr
             );
+    }
+    
+    .values article:last-child {
+        grid-column: auto;
     }
 
 
