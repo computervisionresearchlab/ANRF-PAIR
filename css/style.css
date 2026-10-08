@@ -90,6 +90,8 @@ button {
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 
@@ -155,8 +157,6 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    gap: px;
 }
 
 /* =========================
@@ -359,7 +359,8 @@ button {
 .hero-content {
     position: relative;
     z-index: 2;
-    padding: 100px 0 120px;
+    padding-top: 100px;
+    padding-bottom: 120px;
     max-width: 850px;
 }
 
@@ -2144,7 +2145,8 @@ button {
     align-items: center;
     justify-content: space-between;
     gap: 40px;
-    padding: 65px 0;
+    padding-top: 65px;
+    padding-bottom: 65px;
 }
 
 .light-label {
@@ -2200,7 +2202,8 @@ button {
     display: grid;
     grid-template-columns: 1.5fr 0.8fr 0.9fr 1.25fr;
     gap: 55px;
-    padding: 65px 0 55px;
+    padding-top: 65px;
+    padding-bottom: 55px;
 }
 
 .footer-logos {
@@ -2510,7 +2513,8 @@ button {
         min-height: 30px;
         flex-wrap: wrap;
         justify-content: center;
-        padding: 5px 0;
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
 
     .institution-label {
@@ -2552,9 +2556,9 @@ button {
     .hero-section {
         min-height: auto;
     }
-
     .hero-content {
-        padding: 75px 0 100px;
+        padding-top: 75px;
+        padding-bottom: 100px;
     }
 
     .hero-content h1 {
@@ -2788,7 +2792,8 @@ button {
     .conclave-content {
         flex-direction: column;
         align-items: flex-start;
-        padding: 55px 0;
+        padding-top: 55px;
+        padding-bottom: 55px;
         gap: 30px;
     }
 
@@ -2807,14 +2812,16 @@ button {
     .footer-main {
         grid-template-columns: 1fr;
         gap: 35px;
-        padding: 50px 0 40px;
+        padding-top: 50px;
+        padding-bottom: 40px;
     }
 
     .footer-bottom-inner {
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-        padding: 18px 0;
+        padding-top: 18px;
+        padding-bottom: 18px;
         gap: 5px;
     }
 
